@@ -70,10 +70,10 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    _getCurrentLocation();
     return FutureBuilder(
       future: api.getData(),
       builder: (BuildContext context, AsyncSnapshot snapshot) {
+        _getCurrentLocation();
         if (snapshot.hasData) {
           return Stack(
             children: [
